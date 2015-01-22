@@ -1,0 +1,38 @@
+{
+  "name": "unit-xhr",
+  "version": "0.1.0",
+  "description": "Helper module to create a dummy XMLHttpRequest",
+  "main": "index.js",
+  "scripts": {
+    "start": "node example/index.js",
+    "lint": "jshint .",
+    "test": "istanbul cover _mocha -- -R spec tests/* && istanbul check-coverage --statements 90"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tes/unit-xhr.git"
+  },
+  "keywords": [
+    "XMLHttpRequest",
+    "mock"
+  ],
+  "author": "TES Global",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tes/unit-xhr/issues"
+  },
+  "homepage": "https://github.com/tes/unit-xhr",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "expect.js": "~0.3.1",
+    "istanbul": "^0.3.2",
+    "jshint": "^2.5.6",
+    "mocha": "~1.18.2",
+    "precommit-hook": "^1.0.7"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ]
+}
