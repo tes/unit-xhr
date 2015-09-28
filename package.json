@@ -1,6 +1,6 @@
 {
   "name": "unit-xhr",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Helper module to create a dummy XMLHttpRequest",
   "main": "index.js",
   "scripts": {
@@ -22,8 +22,7 @@
     "url": "https://github.com/tes/unit-xhr/issues"
   },
   "homepage": "https://github.com/tes/unit-xhr",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "expect.js": "~0.3.1",
     "istanbul": "^0.3.2",
