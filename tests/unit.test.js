@@ -58,5 +58,16 @@ describe('Mock XHR', function() {
 
       });
 
+    it('that passes the request object to the send callback', function() {
+      var options = {
+        send: function(data, request) {
+          expect(request).to.be(mock);
+        }
+      }
+
+      var mockConstructor = unitXhr.createMock(options);
+      var mock = new mockConstructor();
+      mock.send('data');
     });
+  });
 });

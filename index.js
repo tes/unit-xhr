@@ -7,7 +7,15 @@ function createMock(options) {
   XMLHttpRequest.prototype.abort = options.abort || function() {};
   XMLHttpRequest.prototype.open = options.open || function() {};
   XMLHttpRequest.prototype.setRequestHeader = options.setRequestHeader || function() {};
-  XMLHttpRequest.prototype.send = options.send || function() {};
+  XMLHttpRequest.prototype.send = function() {
+    if (!options.send) { return; }
+    // Pass all the callers args through to the callback, with 'this' appended.
+    // Allows tests to control onreadystatechange, among other things
+    var args = Array.prototype.slice.call(arguments);
+    args.push(this);
+    options.send.apply(null, args);
+  };
+
   return XMLHttpRequest;
 }
 
